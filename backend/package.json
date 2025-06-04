@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend lambdas and infrastructure",
+  "scripts": {
+    "build": "esbuild lambdas/**/*.ts --outdir=dist --bundle --platform=node --target=node24 --sourcemap",
+    "clean": "rm -rf dist",
+    "build:clean": "npm run clean && npm run build"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.3"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "axios": "^1.9.0"
+  }
+}

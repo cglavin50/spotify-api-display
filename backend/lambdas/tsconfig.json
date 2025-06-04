@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",                  // Required for AWS Lambda
+    "lib": ["ES2020"],
+    "strict": true,                        // Enable all strict type-checking options
+    "esModuleInterop": true,               // Support `import` of CommonJS modules
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "outDir": "../dist/lambdas",           // Output compiled files outside source tree
+    "skipLibCheck": true,                  // Skip type checking of declaration files
+    "resolveJsonModule": true,
+    "sourceMap": true,                     // Helpful for debugging lambdas
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["node_modules", "../dist"]
+}
