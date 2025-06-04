@@ -20,22 +20,25 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.6.0  # use your preferred version
+        working-directory: backend/terraform
 
       - name: Terraform Init
         run: terraform init
+        working-directory: backend/terraform
 
       - name: Terraform Validate
         run: terraform validate
+        working-directory: backend/terraform
 
       - name: Terraform Plan
         run: terraform plan -input=false
+        working-directory: backend/terraform
 
       - name: Terraform Apply (main only)
         if: github.ref == 'refs/heads/main'
         run: terraform apply -auto-approve -input=false
+        working-directory: backend/terraform
