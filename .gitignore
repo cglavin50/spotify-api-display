@@ -12,7 +12,8 @@ crash.log
 ./backend/**/.env
 
 # keep lockfile
-./backend/terraform/.terraform/
+**/.terraform/
+**/plan
 
 # yanked from frontend vite, should clean this up later
 # Logs
